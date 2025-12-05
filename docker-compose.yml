@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./storage:/app/storage
+      - ./documents.db:/app/documents.db
+    environment:
+      - DATABASE_URL=sqlite+aiosqlite:///./documents.db
+      - STORAGE_PATH=/app/storage
