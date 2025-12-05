@@ -7,7 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN mkdir -p /app/storage
+RUN mkdir -p /app/storage && chmod 777 /app/storage
 
 EXPOSE 8000
 

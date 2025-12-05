@@ -25,7 +25,10 @@ def mock_ai_analysis(file_name: str, file_size: int, version: int) -> str:
     else:
         size_comment = size_comments[2]
     
-    version_comment = version_comments[random.randint(0, len(version_comments) - 1)]
+    if version == 1:
+        version_comment = version_comments[2]
+    else:   
+        version_comment = version_comments[random.randint(0, len(version_comments) - 1)]
     
     analysis = f"{size_comment}, {version_comment}. "
     analysis += f"Документ '{file_name}' версии {version} имеет размер {size_kb:.2f} KB."
